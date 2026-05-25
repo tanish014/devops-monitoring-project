@@ -10,13 +10,12 @@ pipeline {
 
         stage('Check Docker') {
             steps {
-                sh '/usr/bin/docker --version'
-            }
+               sh 'docker --version'             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh '/usr/bin/docker build -t devops-monitoring-app .'
+                sh 'docker build -t devops-monitoring-app .'
             }
         }
 
