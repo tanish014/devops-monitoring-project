@@ -12,20 +12,19 @@ pipeline {
 
         stage('Check Docker') {
             steps {
-                sh '/usr/bin/docker --version || which docker'
+                sh 'docker --version' || 'which docker'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh '/usr/bin/docker build -t devops-monitoring-app .'
+               sh 'docker build -t devops-monitoring-app .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                sh '/usr/bin/docker run -d -p 3000:3000 devops-monitoring-app'
-            }
+             sh 'docker run ...'            }
         }
     }
 }
