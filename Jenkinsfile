@@ -12,8 +12,7 @@ pipeline {
 
         stage('Check Docker') {
             steps {
-                sh 'docker --version' || 'which docker'
-            }
+              sh 'docker --version || which docker'             }
         }
 
         stage('Build Docker Image') {
