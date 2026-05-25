@@ -5,8 +5,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/tanish014/devops-monitoring-project.git'
-            }
+              git branch: 'main', url: 'https://github.com/tanish014/devops-monitoring-project.git'            }
         }
 
         stage('Check Docker') {
