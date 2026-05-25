@@ -19,12 +19,12 @@ pipeline {
             }
         }
 
-        stage('Run Docker Container') {
-            steps {
-                sh '/usr/bin/docker stop devops-monitoring-app || true'
-                sh '/usr/bin/docker rm devops-monitoring-app || true'
-                sh '/usr/bin/docker run -d --name devops-monitoring-app -p 3000:3000 devops-monitoring-app'
-            }
+       stage('Run Docker Container') {
+           steps {
+            sh 'docker stop devops-monitoring-app || true'
+            sh 'docker rm devops-monitoring-app || true'
+            sh 'docker run -d --name devops-monitoring-app -p 3000:3000 devops-monitoring-app'
+           }
         }
     }
 }
