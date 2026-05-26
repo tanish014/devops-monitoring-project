@@ -1,44 +1,157 @@
+# Professional DevOps Project Frontend (index.html)
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps CI/CD Project</title>
+    <title>DevOps CI/CD Pipeline</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background: #0f172a;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
             color: white;
-            font-family: Arial, sans-serif;
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
+            justify-content: center;
+            padding: 40px;
         }
 
         .container {
-            text-align: center;
+            width: 100%;
+            max-width: 1100px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 50px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .top-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            border-radius: 999px;
+            font-size: 14px;
+            margin-bottom: 25px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 56px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
             color: #38bdf8;
         }
 
-        p {
-            font-size: 1.2rem;
+        .description {
             color: #cbd5e1;
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 850px;
+            margin-bottom: 40px;
         }
 
-        .box {
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
             margin-top: 20px;
-            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 24px;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(56, 189, 248, 0.6);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.15);
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .pipeline {
+            margin-top: 50px;
+            padding: 30px;
+            border-radius: 18px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .pipeline h2 {
+            margin-bottom: 20px;
+            color: #38bdf8;
+        }
+
+        .pipeline-flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        .step {
+            background: rgba(56, 189, 248, 0.12);
+            padding: 12px 18px;
             border-radius: 12px;
-            background: #1e293b;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .arrow {
+            color: #38bdf8;
+            font-size: 22px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        @media(max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .container {
+                padding: 30px;
+            }
         }
     </style>
 </head>
@@ -47,17 +160,93 @@
 
     <div class="container">
 
-        <h1>DevOps Pipeline Working 🚀</h1>
+        <div class="top-badge">
+            🚀 DevOps & Cloud Computing Project
+        </div>
 
-        <div class="box">
-            <p>Automatic Deployment Using:</p>
+        <h1>
+            Automated <span class="highlight">CI/CD Pipeline</span><br>
+            using Modern DevOps Tools
+        </h1>
 
-            <p>✅ GitHub</p>
-            <p>✅ AWS</p>
-            <p>✅ Jenkins</p>
-            <p>✅ Docker</p>
-            <p>✅ Prometheus</p>
-            <p>✅ Grafana</p>
+        <p class="description">
+            This project demonstrates a complete DevOps workflow integrating GitHub,
+            Jenkins, Docker, Terraform, AWS EC2, Prometheus, and Grafana to automate
+            application deployment, cloud provisioning, monitoring, and observability.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>GitHub</h3>
+                <p>Used for source code management and version control integration.</p>
+            </div>
+
+            <div class="card">
+                <h3>Jenkins</h3>
+                <p>Automates CI/CD pipeline stages including build and deployment.</p>
+            </div>
+
+            <div class="card">
+                <h3>Docker</h3>
+                <p>Containerizes the application for consistent deployment across environments.</p>
+            </div>
+
+            <div class="card">
+                <h3>Terraform</h3>
+                <p>Provisioned AWS infrastructure automatically using Infrastructure as Code.</p>
+            </div>
+
+            <div class="card">
+                <h3>AWS EC2</h3>
+                <p>Hosts the application publicly on scalable cloud infrastructure.</p>
+            </div>
+
+            <div class="card">
+                <h3>Prometheus</h3>
+                <p>Collects system and application monitoring metrics in real-time.</p>
+            </div>
+
+            <div class="card">
+                <h3>Grafana</h3>
+                <p>Visualizes monitoring data through interactive dashboards and graphs.</p>
+            </div>
+
+            <div class="card">
+                <h3>Node Exporter</h3>
+                <p>Provides CPU, memory, disk, and server-level metrics to Prometheus.</p>
+            </div>
+
+        </div>
+
+        <div class="pipeline">
+            <h2>⚡ CI/CD Workflow</h2>
+
+            <div class="pipeline-flow">
+                <div class="step">GitHub</div>
+                <div class="arrow">→</div>
+
+                <div class="step">Jenkins Pipeline</div>
+                <div class="arrow">→</div>
+
+                <div class="step">Docker Build</div>
+                <div class="arrow">→</div>
+
+                <div class="step">Terraform</div>
+                <div class="arrow">→</div>
+
+                <div class="step">AWS EC2</div>
+                <div class="arrow">→</div>
+
+                <div class="step">Prometheus</div>
+                <div class="arrow">→</div>
+
+                <div class="step">Grafana</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Developed by Tanish Salaria • DevOps & Cloud Computing Project
         </div>
 
     </div>
